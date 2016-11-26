@@ -29,3 +29,8 @@ node_modules
 # Vagrant
 bin
 .vagrant
+
+# grunt-wordpress-deploy
+backups
+Gruntfile.js
+!Gruntfile.js.example

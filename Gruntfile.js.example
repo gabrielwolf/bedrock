@@ -1,0 +1,50 @@
+module.exports = function(grunt) {
+  "use strict";
+
+  grunt.initConfig({
+    wordpressdeploy: {
+      options: {
+        backup_dir: "backups/",
+        rsync_args: ['--verbose', '--progress', '-rlpt', '--compress', '--omit-dir-times', '--delete'],
+        exclusions: ['.DS_Store', '.git/', '.gitignore', '.gitattributes', 'tmp/*', 'backups/', 'composer.json', 'composer.lock', 'README.md', 'package.json', 'node_modules', '.env', '.htaccess', 'Gruntfile.js']
+      },
+      local: {
+        "title": "local",
+        "database": "database_name",
+        "user": "database_username",
+        "pass": "database_password",
+        "host": "database_host",
+        "url": "http://local_url/",
+        "path": "/local_path/"
+      },
+      staging: {
+        "title": "staging",
+        "database": "database_name",
+        "user": "database_username",
+        "pass": "database_password",
+        "host": "database_host",
+        "url": "http://staging_url/",
+        "path": "/staging_path/",
+        "ssh_host": "user@staging_host"
+      },
+      production: {
+        "title": "production",
+        "database": "database_name",
+        "user": "database_username",
+        "pass": "database_password",
+        "host": "database_host",
+        "url": "http://production_url/",
+        "path": "/production_path/",
+        "ssh_host": "user@production_host"
+      }
+    }
+  });
+
+  // Load tasks
+  grunt.loadNpmTasks('grunt-wordpress-deploy');
+
+  // Register tasks
+  grunt.registerTask('default', [
+    'wordpressdeploy'
+  ]);
+};

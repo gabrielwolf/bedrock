@@ -1,0 +1,14 @@
+{
+  "name": "grunt-wordpress-deploy-dependency",
+  "version": "1.0.0",
+  "description": "Works like a charm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Wolf",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "0.4.5"
+  }
+}
