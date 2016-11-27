@@ -16,8 +16,8 @@ Get the latest grunt-wordpress-deploy:
 Say NPM where to include grunt-wordpress-deploy:  
 `$ npm link vendor/grunt-wordpress-deploy`  
 
-Get WordPress, plugins and all the Bedrock stuff:  
-`$ composer install`  
+Get WordPress, plugins, a theme and all the Bedrock stuff:  
+`$ composer install && composer require wpackagist-theme/twentyfifteen`  
 
 - Set up a local server (choose NGINX, Apache or what you prefer) name it example.dev and point the server root to `/var/www/example.com/web`  
 - Create a local MYSQL database like `wp_example.com`  
