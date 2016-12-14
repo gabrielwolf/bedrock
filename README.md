@@ -51,10 +51,11 @@ Adapt the credentials (you can copy & paste the content of your local .env to st
 
 Troubleshooting:
 If there are errors - and there will be, believe me - double check the configuration locally and on the server.
-Mostly it's things like a missing trailing slash in the Gruntfile, or a typo in the domain name somewhere.  
-- Start on the files `.env` and `.Gruntfile.js`, then  
-- See if your server points to the right directory  
-- Run `composer install` locally.  
+Mostly it's things like a missing trailing slash in the Gruntfile, or a typo in the domain name somewhere.
+- Start on the files `.env` and `Gruntfile.js`.
+- See if the servers point to the right directory.
+- Run `composer install` locally.
+- Match rsync versions on the developement and staging/live environment you're pushing to.
 - Push files and database again. If there are errors while pushing, go to  `backups/` and read the \*.sql files, there you will find error messages.  
 - Restart the servers.  
 - If you have a white screen of death, probably the site url in the database on the server is wrong. Open example.com/wp/wp-admin, login, go to settings and see if the homeurl is http://example.com and the siteurl is http://example.com/wp.
