@@ -24,7 +24,7 @@ Get WordPress, plugins, a theme and all the Bedrock stuff:
 
 Back to the web root make config files and adapt the credentials:  
 `$ cp .env.example .env && nano .env`  
-`$ cp .Gruntfile.js.example .Gruntfile.js && nano .Gruntfile.js`  
+`$ cp Gruntfile.js.example Gruntfile.js && nano Gruntfile.js`  
   
 - Open your browser go to example.dev and voila: WordPress should do fine by now.  
   
