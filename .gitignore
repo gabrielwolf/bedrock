@@ -30,3 +30,6 @@ bin
 backups
 Gruntfile.js
 !Gruntfile.js.example
+
+# Composer
+/vendor
