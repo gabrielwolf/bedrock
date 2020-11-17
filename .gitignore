@@ -24,6 +24,7 @@ vendor/*
 
 # Node Package Manager
 node_modules
+yarn.lock
 
 # grunt-wordpress-deploy
 backups

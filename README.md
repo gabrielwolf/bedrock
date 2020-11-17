@@ -7,13 +7,16 @@ This fork of Bedrock and grunt-wordpress-deploy is made to deploy your site easi
 Get Bedrock:  
 `$ git clone https://github.com/gabrielwolf/bedrock-grunt-wordpress-deploy example.com && cd example.com`  
 
-Get a good old Grunt version for grunt-wordpress-deploy:  
-`$ npm install`  
+Get Grunt-CLI:  
+`$ yarn global add grunt-cli`  
+
+Get a local grunt copy:
+`$ yarn add grunt --dev --exact`  
 
 Get the latest grunt-wordpress-deploy:  
 `$ git clone https://github.com/gabrielwolf/grunt-wordpress-deploy vendor/grunt-wordpress-deploy`  
 
-Say NPM where to include grunt-wordpress-deploy:  
+Say where to include grunt-wordpress-deploy (yarn link won't work!):  
 `$ npm link vendor/grunt-wordpress-deploy`  
 
 Get WordPress, plugins, a theme and all the Bedrock stuff:  
