@@ -20,9 +20,9 @@ Say where to include grunt-wordpress-deploy (yarn link won't work!):
 `$ npm link vendor/grunt-wordpress-deploy`  
 
 Get WordPress, plugins, a theme and all the Bedrock stuff:  
-`$ composer install && composer require wpackagist-theme/twentyfifteen`  
+`$ composer install && composer require wpackagist-theme/twentynineteen`  
 
-- Set up a local server (choose NGINX, Apache or what you prefer) name it example.dev and point the server root to `/var/www/example.com/web`  
+- Set up a local server (choose NGINX, Apache or what you prefer) name it example.test and point the server root to `/var/www/example.com/web`  
 - Create a local MYSQL database like `wp_example.com`  
 
 Back to the web root make config files and adapt the credentials:  
