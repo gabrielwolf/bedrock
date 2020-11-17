@@ -1,3 +1,70 @@
+# [Bedrock + grunt-wordpress-deploy](https://github.com/gabrielwolf/bedrock-grunt-wordpress-deploy)
+
+This fork of Bedrock and grunt-wordpress-deploy is made to deploy your site easily from and to different staging environments. It is useful when customers add content and you just have to pull/push the files and database to a staging or production environment.
+
+## HowTo setup the baby on a local dev server and a staging server
+
+Get Bedrock:  
+`$ git clone https://github.com/gabrielwolf/bedrock-grunt-wordpress-deploy example.com && cd example.com`  
+
+Get a good old Grunt version for grunt-wordpress-deploy:  
+`$ npm install`  
+
+Get the latest grunt-wordpress-deploy:  
+`$ git clone https://github.com/gabrielwolf/grunt-wordpress-deploy vendor/grunt-wordpress-deploy`  
+
+Say NPM where to include grunt-wordpress-deploy:  
+`$ npm link vendor/grunt-wordpress-deploy`  
+
+Get WordPress, plugins, a theme and all the Bedrock stuff:  
+`$ composer install && composer require wpackagist-theme/twentyfifteen`  
+
+- Set up a local server (choose NGINX, Apache or what you prefer) name it example.dev and point the server root to `/var/www/example.com/web`  
+- Create a local MYSQL database like `wp_example.com`  
+
+Back to the web root make config files and adapt the credentials:  
+`$ cp .env.example .env && nano .env`  
+`$ cp Gruntfile.js.example Gruntfile.js && nano Gruntfile.js`  
+  
+- Open your browser go to example.dev and voila: WordPress should do fine by now.  
+  
+SSH to your staging server  
+`$ ssh user@example.com`  
+  
+Prepare a directory for the website  
+`$ cd /var/www/html`  
+`$ mkdir example.com && cd example.com`  
+  
+Make a config file  
+`touch .env`  
+  
+Adapt the credentials (you can copy & paste the content of your local .env to start with)  
+`$ nano .env`  
+
+- Set up your staging server, name it example.com with server root pointing to `/var/www/example.com/web`  
+  
+- Now we deploy the first time to our staging environment:  
+`$ grunt push_files --target=staging`  
+`$ grunt push_db --target=staging`  
+  
+- Open your browser and check example.com. A vanilla WordPress should say hello!
+
+Troubleshooting:
+If there are errors - and there will be, believe me - double check the configuration locally and on the server.
+Mostly it's things like a missing trailing slash in the Gruntfile, or a typo in the domain name somewhere.
+- If you have a white screen of death, probably the site url in the database on the server is wrong. Open example.com/wp-admin, login, go to settings and see if the wordpress-address is http://example.com/wp and the site-address is http://example.com. Then update the permalinks.
+- Start on the files `.env` and `Gruntfile.js`.
+- See if both web servers point to the correct directories.
+- Run `composer install` locally.
+- Match rsync versions on the developement and staging/live environment you're pushing to.
+- Push files and database again. If there are errors while pushing, go to  `backups/` and read the \*.sql files, there you will find error messages. 
+- Restart the servers.
+- grunt-wordpress-deploy does automatically search and replace the urls before transfering the database up and down.
+
+An error is mostly "just" a misconfiguration.  
+
+Now the original Bedrock Readme:  
+
 <p align="center">
   <a href="https://roots.io/bedrock/">
     <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">

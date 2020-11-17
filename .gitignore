@@ -18,6 +18,18 @@ web/.htaccess
 .env.*
 !.env.example
 
+# Vendor (e.g. Composer)
+vendor/*
+!vendor/.gitkeep
+
+# Node Package Manager
+node_modules
+
+# grunt-wordpress-deploy
+backups
+Gruntfile.js
+!Gruntfile.js.example
+
 # Composer
 /vendor
 
